@@ -1,0 +1,58 @@
+package.json is the configuration from NPM
+two types Of dependency
+
+Dev: required in development like parcel just need to for bundle only for development so we are using
+      npm install -D parcel
+normal: used in prod 
+
+"parcel": "^2.10.3"  ===> ^ means it will automatically upgrade when it is minor upgrade
+                     ===> ~ means it will automatically upgrade when it is major upgrade
+
+
+=====================================================================================================
+
+package-lock.json =>  keep  exact version track don't have ^ or ~ also keep track the hash to match correct version of local and also contain transitive dependency
+
+package.json => it is the npm configuration that keep track of the main package version have ^ or ~ to map approx version
+
+node-module contains all files we got from npm while installing the package
+
+
+* every package we install through npm itself has its own package.json to manage the package called as transitive dependency
+
+* we can have more than one package.json in a single solution
+
+*we dont push node_modules in git because we can re create all this package from package.json or lock.json
+
+* but we need to put package.json and lock.json to resolve the dependency
+
+*npx parcel index.html
+npx => execute the package
+parcel => name
+index.html => entry point of application
+
+
+* cdn links not good way to load package (npm package is good to have)
+
+HMR: Hot module replacement
+parcel do a caching to make build faster
+
+it also does minification and bundling compressing, diagnostics, error handling
+
+#read about consistent hashing
+# Diffrential bundling - support older browser like for diffrent type of app
+#parcel need to read
+
+
+* need to remove app.js as an entry point from the package.json
+*npx parcel build index.html (for prod)
+
+#browserslist.dev => need to visit for configuring browser
+
+* tree shaking in parcel => remove unused code while build
+
+
+
+
+
+
