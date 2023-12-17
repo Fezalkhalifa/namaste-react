@@ -6,6 +6,8 @@
  *        </div>
  * </div>
  */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const appendedChild = React.createElement(
   "Div",
@@ -16,7 +18,11 @@ const appendedChild = React.createElement(
   ]),
   React.createElement("div", { id: "child2" }, [
     React.createElement("h1", {}, "Hello world from react h1 child2"),
-    React.createElement("h2", {}, "Hello world from react h2 child2"),
+    React.createElement(
+      "h2",
+      {},
+      "Hello from update world from react h2 child2"
+    ),
   ])
 );
 
