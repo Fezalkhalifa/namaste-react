@@ -1,0 +1,80 @@
+# comments only about lecture 3
+
+--instead of the running npx parcel index.html every time to run dev environment we can also configure that inside the package.json section
+for example
+
+"scripts": {
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+  },
+
+  once we run =>  npm run start (it will run dev environment for us) we can more shorthand this further with npm start // only work for start but not for build**
+
+  JSX is a javascript syntex => its not ralated with react
+
+  const jsxheading = <h1>Fisrt JSX Heading</h1>;  //JSX is not HTML in Js but its HTML/xml like syntax
+
+  //this code is not understndable by js but it's compiled or transpiled by parcel to js format so js can understand => parcel use babel inside the parcel to translate the code
+  // babel is javascript compiler its babel's responsibility to compile jsx to js format
+
+  //JSX => react.CreateElement => ReactElemet-Js Object => HTML Element (Render)
+   const jsxheading = <h1>Fisrt JSX Heading</h1>;  //JSX is not HTML in Js but its HTML/xml like syntax
+
+  # research about BABEL library
+
+  if you have to give attribute to jsx its use a camel case only
+
+  #research about other attributes
+
+  if your code line is multiple line so we need to wrap the code in () braces like as follows
+const jsxheading = (
+  <h1 id="heading" className="head">
+    Fisrt JSX Heading
+  </h1>
+);
+
+//react components
+//two types of components
+//class based component -> old
+// functional component -> NEW=> always give name starting with CAPITAL Character => is a function that returns JSX code or => its a js function which return react element
+
+//react components
+//two types of components
+//class based component -> OLD
+// functional component -> NEW ==>
+const HeadingComponent = () => {
+  return <h1> Functional component</h1>;
+};
+
+const HeadingComponent2 = () => <h1> Functional component</h1>; //both is same
+
+const HeadingComponent3 = () => (
+  //way of declaring nested things
+  <div id="container">
+    <h1> Functional component</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent3 />); //way to render the functional component
+
+//JSX React element creation
+const jsxheading = () => (
+  <h1 id="heading" className="head">
+    Fisrt JSX Heading
+  </h1>
+);
+
+const HeadingComponent3 = () => (
+  //way of declaring nested things
+  <div id="container">
+    <jsxheading /> //way of adding the component
+    <h1> Functional component</h1>
+  </div>
+);
+
+//JSX also sanitize the data and prevent it from XSS cross site scripts attacks
+
+
